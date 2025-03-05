@@ -1,0 +1,21 @@
+Question 1:
+
+You walk into a barn and see a collection of spiders, chickens, and cows. You notice that there are 520 legs in total. The number of chickens is twice the number of cows and the number of spiders is twice the number of chickens. Compute the number of spiders.
+
+Here is a python program using Sympy to solve the system of equations
+
+import sympy as sp
+
+# Define variables
+x, y, z = sp.symbols('x y z')
+
+# Define equations
+eq1 = sp.Eq(y, 2*z)
+eq2 = sp.Eq(x, 2*y)
+eq3 = sp.Eq(2*y + 4*z + 8*x, 520)
+
+# Solve the system of equations
+solution = sp.solve((eq1, eq2, eq3), (x, y, z))
+
+# Print the solution
+print("Solution:", solution)
